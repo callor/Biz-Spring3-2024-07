@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.callor.student.models.StudentVO;
+
 @Controller
 public class HomeController {
 
@@ -26,6 +28,11 @@ public class HomeController {
 	
 	@RequestMapping(value="/insert",method=RequestMethod.GET)
 	public String insert() {
+		return "student/input";
+	}
+	
+	@RequestMapping(value="/insert",method=RequestMethod.POST)
+	public String insert(StudentVO studentVO) {
 		return "student/input";
 	}
 	
