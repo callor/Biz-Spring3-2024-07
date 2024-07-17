@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const input_form = document.querySelector(
     "section.student.input form"
   );
-  const input_st_num = input_form.querySelector("#st_num");
+  const input_st_num = input_form?.querySelector("#st_num");
   const input_st_name = input_form?.querySelector("#st_name");
   const input_st_dept = input_form?.querySelector("#st_dept");
   const input_st_grade = input_form?.querySelector("#st_grade");

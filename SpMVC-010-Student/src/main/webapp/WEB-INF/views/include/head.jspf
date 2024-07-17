@@ -6,5 +6,6 @@
 	<title>학생관리시스템</title>
 	<link href="${rootPath}/static/css/main.css" rel="stylesheet" />
 	<script src="${rootPath}/static/js/main.js"></script>
+	<script src="${rootPath}/static/js/student/list.js"></script>
 	<script src="${rootPath}/static/js/student/input.js"></script>
 </head>
