@@ -8,7 +8,7 @@
 	<%@ include file="/WEB-INF/views/include/header.jsp" %>
   	<section class="main">
   		<h2>학생정보</h2>
-  		<table>
+  		<table class="student list">
   			<thead>
 	  			<tr>
 	  				<th>학번</th>
@@ -21,7 +21,7 @@
   			</thead>
   			<tbody>
   				<c:forEach items="${ST_LIST}" var="ST">
-	  			<tr>
+	  			<tr data-st_num="${ST.st_num}" >
 	  				<td>${ST.st_num}</td>
 	  				<td>${ST.st_name}</td>
 	  				<td>${ST.st_dept}</td>

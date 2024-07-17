@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+section.student.detail {
+  width: 100%;
+  table {
+    border-collapse: collapse;
+    tr {
+      display: flex;
+    }
+    th,
+    td {
+      flex: 1;
+      padding: 0.7rem;
+      border-top: 1px solid #777;
+      border-bottom: 1px solid #777;
+    }
+    th {
+      border-right: 1px solid #777;
+      background-color: #aaa;
+      text-align: right;
+    }
+    td {
+      background-color: #eee;
+      text-align: left;
+    }
+  }
+  table,
+  div {
+    width: 80%;
+    margin: 5px auto;
+  }
+  div {
+    text-align: right;
+    padding: 12px 0;
+    button {
+      padding: 12px 16px;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      color: white;
+
+      &.list {
+        background-color: green;
+      }
+      &.update {
+        background-color: blue;
+      }
+      &.delete {
+        background-color: orange;
+      }
+      &:hover {
+        background-color: #aaa;
+        color: black;
+        cursor: pointer;
+      }
+    }
+  }
+}

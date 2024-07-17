@@ -5,6 +5,7 @@
 
 <mapper namespace="com.callor.student.persistance.StudentDao">
 
+
 	<insert id="insert">
 		INSERT INTO tbl_student(
 		st_num,st_name,st_dept,st_grade,st_tel,st_addr
