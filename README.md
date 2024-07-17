@@ -1,6 +1,8 @@
-# maven project 로 Legacy MVC 프로젝트 생성하기
+# maven project 로 Spring Legacy MVC 프로젝트 생성하기
 
-- STS 3.9.x 버전을 다운로드 받는다
+- `STS 3.9.x` 버전을 다운로드 받는다
+- `Spring Bean Configuration File` 생성과 `web.xml` 코드 자동완성을 위하여 `STS 3.9.x` 버전을 사용한다.
+- `STS 4.x` 버전은 `Spring Boot` 프로젝트에 특화 되어 있다. 
 
 ## maven Project 생성
 
