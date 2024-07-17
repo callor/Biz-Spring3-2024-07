@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- dataSource -->
+	<bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName"  value="com.mysql.cj.jdbc.Driver" />
+		<property name="url"  value="jdbc:mysql://localhost:3306/mydb"/>
+		<property name="username" value="user1" />
+		<property name="password" value="12341234" />
+	</bean>
+	
+	<!-- SqlSessionFactoryBean -->
+	<bean id="sessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"/>
+		<property name="typeAliasesPackage" value="com.callor.student.models"/>
+	</bean>
+	
+	<!-- sqlSessionTemplate -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sessionFactoryBean"/>
+	</bean>
+	
+	<mybatis-spring:scan base-package="com.callor.student.persistance"/>
+
+</beans>

@@ -26,14 +26,18 @@ public class HomeController {
 		return "home";
 	}
 	
+	// 학생정보를 입력받기 위한 화면을 보여주는 method
 	@RequestMapping(value="/insert",method=RequestMethod.GET)
 	public String insert() {
 		return "student/input";
 	}
 	
+	// 학생정보 입력화면에서 데이터를 입력한 후 전송(저장)을 클릭했을때
+	// 데이터를 전달받은 method
 	@RequestMapping(value="/insert",method=RequestMethod.POST)
-	public String insert(StudentVO studentVO) {
-		return "student/input";
+	public String insert(StudentVO studentVO,Model model) {
+		model.addAttribute("STD",studentVO);
+		return "student/view";
 	}
 	
 }

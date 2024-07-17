@@ -53,3 +53,17 @@
     <version>8.4.0</version>
 </dependency>
 ```
+
+## DBMS 연동을 위한 `context.xml` 파일 작성하기
+- `Spring Project`의 `/WEB-INF/spring/appServlet` 폴더에 `spring bean confiruration file`을 생성한다.
+- 이때 파일은 `*-context.xml` 형식의 패턴으로 이름을 정한다.
+- `*-context.xml` 형식의 패턴으로 이름을 정하면 `web.xml`에서 파일을 자동으로 인식하고 프로젝트가 실행될때 설정값을 읽어서 프로젝트를 초기화 한다
+- 여기에서는 `db-context.xml` 라는 이름으로 설정할 것이다.
+```xml
+<!-- db-context.xml 에는 다음의 3가지 bean 과 기타 설정이 추가된다 -->
+<!-- dataSource bean-->
+<!-- SqlSessionFactoryBean -->
+<!-- SqlSessionTemplate bean-->
+
+<!-- mybatis component scan -->
+```
