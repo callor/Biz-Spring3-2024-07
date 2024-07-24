@@ -8,13 +8,12 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
 @NoArgsConstructor
-public class SubjectVO {
-	
-	private String sb_code;//	varchar(5)
-	private String sb_name;//	varchar(20)
-	private String sb_prof;//	varchar(20)
-
+@AllArgsConstructor
+@ToString
+public class ScoreVO {
+	private String sc_stnum; //	varchar(5)
+	private String sc_sbcode; //	varchar(5)
+	private String sb_name; //	varchar(20)	
+	private int sc_score; //	int
 }

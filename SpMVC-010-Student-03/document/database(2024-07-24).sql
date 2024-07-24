@@ -70,7 +70,22 @@ FROM tbl_score
 	JOIN tbl_subject
 		ON sc_sbcode = sc_code;
 
+DESC tbl_student;
+DESC tbl_subject;
 
+SELECT * FROM tbl_score;
+DROP VIEW view_scores;
+
+-- 성적 table 에 과목명이 포함된 view 생성하기
+CREATE VIEW view_score
+AS
+(
+	SELECT SC.*, SB.sb_name 
+	FROM tbl_score SC
+		JOIN tbl_subject SB
+			ON sc_sbcode = sb_code
+);
+SELECT * FROM view_score;
 
 
 
