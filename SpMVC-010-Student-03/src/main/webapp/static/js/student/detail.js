@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn_update = section_detail?.querySelector("button.update");
   const btn_delete = section_detail?.querySelector("button.delete");
 
-  btn_list.addEventListener("click", () => {
+  btn_list?.addEventListener("click", () => {
     document.location.href = `${rootPath}/`;
   });
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  btn_update.addEventListener("click", (e) => {
+  btn_update?.addEventListener("click", (e) => {
     // update 버튼을 감싸고 있는 div 가 가지고 있는 st_num 변수 값을 추출하기
     const st_num = e.target.closest("div").dataset.st_num;
     // st_num 변수에 저장한 학번의 학생정보를 수정하고 싶으니 정보를 수정하는 화면을 나에게 보여줘

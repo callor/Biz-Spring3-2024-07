@@ -1,5 +1,7 @@
 package com.callor.student.models;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,5 +23,7 @@ public class StudentVO {
 	private int st_grade;
 	private String st_tel;
 	private String st_addr;
+	
+	private List<ScoreVO> st_scores;
 
 }

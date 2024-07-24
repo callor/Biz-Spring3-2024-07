@@ -25,10 +25,24 @@ section.student.detail {
     }
   }
   table,
-  div {
+  div,
+  ul {
     width: 80%;
     margin: 5px auto;
   }
+  ul {
+    list-style-type: none;
+    li {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      span,
+      strong {
+        flex: 1;
+        padding: 12px 16px;
+      }
+    }
+  }
+
   div {
     text-align: right;
     padding: 12px 0;

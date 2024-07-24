@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>학생관리시스템</title>
 	<link href="${rootPath}/static/css/main.css" rel="stylesheet" />
+	<link href="${rootPath}/static/css/student/list.css" rel="stylesheet" />
 	<script>
 		// JSP 에서 선언된 rootPath 변수를 *.js 파일에서 사용할수 있도록
 		// JS 의 변수로 선언하기
