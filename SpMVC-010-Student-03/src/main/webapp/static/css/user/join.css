@@ -50,3 +50,13 @@ form.user.join {
     }
   }
 }
+
+form.user.join {
+  span {
+    padding: 6px 16px 10px 16px;
+    margin: 0 auto;
+    width: 85%;
+    color: red;
+    display: none;
+  }
+}

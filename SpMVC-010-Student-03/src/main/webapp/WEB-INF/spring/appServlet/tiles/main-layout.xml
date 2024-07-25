@@ -13,6 +13,6 @@
 	</definition>
 
 	<definition name="home" extends="default">
-		<put-attribute name="content" value="/WEB-INF/views/student/list.jsp" />
+		<put-attribute name="content" value="" />
 	</definition>
 </tiles-definitions>
