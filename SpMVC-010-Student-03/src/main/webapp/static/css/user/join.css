@@ -2,11 +2,17 @@
 form.user.join {
   fieldset {
     margin: 20px auto;
+    background: #ebecf0;
     border: none;
     border-radius: 10px;
     box-shadow: -5px -5px 10px #fff, 5px 5px 10px #babebc;
     width: 768px;
     min-height: 480px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     legend {
       text-align: center;
@@ -18,7 +24,7 @@ form.user.join {
     input {
       background: #eee;
       padding: 16px;
-      margin: 8px 0;
+      margin: 8px auto;
       width: 85%;
       border: 0;
       outline: none;

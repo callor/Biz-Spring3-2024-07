@@ -7,10 +7,10 @@
 <form class="user join">
 	<fieldset>
 		<legend>회원가입</legend>
-		<div><input type="text" placeholder="USER NAME" /></div>
-		<div><input type="password" placeholder="PASSWORD" /></div>
-		<div><input type="text" placeholder="본명" /></div>
-		<div><input type="text" placeholder="별명" /></div>
-		<div><input type="button" value="회원가입" /></div>
+		<input type="text" placeholder="USER NAME" />
+		<input type="password" placeholder="PASSWORD" />
+		<input type="text" placeholder="본명" />
+		<input type="text" placeholder="별명" />
+		<input type="button" value="회원가입" />
 	</fieldset>
 </form>
