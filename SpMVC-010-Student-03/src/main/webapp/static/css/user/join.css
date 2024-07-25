@@ -1,0 +1,46 @@
+@charset "UTF-8";
+form.user.join {
+  fieldset {
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: -5px -5px 10px #fff, 5px 5px 10px #babebc;
+    width: 768px;
+    min-height: 480px;
+
+    legend {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 20px auto;
+    }
+
+    input {
+      background: #eee;
+      padding: 16px;
+      margin: 8px 0;
+      width: 85%;
+      border: 0;
+      outline: none;
+      border-radius: 20px;
+      box-shadow: inset 7px 2px 10px #babebc,
+        inset -5px -5px 12px #fff;
+    }
+    input[type="button"] {
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 15px 45px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 80ms ease-in;
+      box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
+      &:active {
+        box-shadow: inset 1px 1px 2px #babebc,
+          inset -1px -1px 2px #fff;
+      }
+    }
+  }
+}
