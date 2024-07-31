@@ -1,4 +1,4 @@
-package com.callor.memo;
+package com.callor.memo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
