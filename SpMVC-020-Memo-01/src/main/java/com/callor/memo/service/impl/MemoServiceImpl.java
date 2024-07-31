@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,8 @@ public class MemoServiceImpl implements MemoService{
 				"세상을 하늘아래 두며"
 		};
 		for(String m : memos) {
+			
+			String m_seq = UUID.randomUUID().toString();
 		
 			/*
 			 * Builder 패턴을 사용하여 데이터객체 만들기
@@ -49,7 +52,7 @@ public class MemoServiceImpl implements MemoService{
 			 * 		필요한 변수만 세팅할 수 있다
 			 */
 			Memo memo = Memo.builder()
-					.m_seq("")
+					.m_seq(m_seq)
 					.m_date(lt.format(date))
 					.m_time(lt.format(time))
 					.m_subject(m)
@@ -90,15 +93,24 @@ public class MemoServiceImpl implements MemoService{
 	}
 
 	@Override
-	public Memo findById(String m_memo) {
-		// TODO Auto-generated method stub
+	public Memo findById(String m_seq) {
+		/*
+		 * memoList 에 저장된 요소중 m_seq 값이 매개변수로 전달받은
+		 * m_seq 와 일치하는 값이 있으면 그 메모를 return 하기
+		 */
+		for(Memo memo : memoList) {
+			if(memo.getM_seq().equals(m_seq)) return memo;
+		}
 		return null;
 	}
 
 	@Override
 	public int insert(Memo memo) {
-		// TODO Auto-generated method stub
-		return 0;
+
+		String m_seq = UUID.randomUUID().toString();
+		memo.setM_seq(m_seq);
+		memoList.add(memo);
+		return memoList.size();
 	}
 
 	@Override

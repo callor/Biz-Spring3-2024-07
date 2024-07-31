@@ -48,7 +48,7 @@ section.memo article.list {
   justify-content: center;
 
   div.date-time {
-    display: flex;
+    display: inline-flex;
     gap: 5px;
     justify-content: space-around;
     align-items: center;
