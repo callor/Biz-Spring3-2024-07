@@ -66,6 +66,30 @@ section.memo article.list {
       padding: 1rem;
       border-bottom: 2px solid #aaa;
       font-size: 1.6rem;
+      display: flex;
+      i {
+        margin-right: 10px;
+        line-height: 1.6rem;
+        color: blue;
+      }
+      span {
+        flex: 1;
+      }
+      i.delete {
+        color: red;
+        font-size: 3rem;
+        font-weight: 900;
+        opacity: 0;
+        transition: opacity 0.7s;
+      }
+      /* li tag 에 hover */
+      &:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+      }
+      &:hover i.delete {
+        opacity: 1;
+      }
     }
   }
   input {
