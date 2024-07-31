@@ -96,7 +96,7 @@ CREATE TABLE tbl_users (
 	nick	VARCHAR(20)	NOT NULL,	
 	role	VARCHAR(10)	NOT NULL	
 );
-
+SELECT * FROM tbl_users;
 
 
 
