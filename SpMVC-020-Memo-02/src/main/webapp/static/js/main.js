@@ -28,11 +28,28 @@ document.addEventListener("DOMContentLoaded", () => {
     subBox.innerHTML = html;
   };
 
+  const onDeleteMemo = async (e) => {
+    const mSeq = e.target.closest("LI").dataset.seq;
+
+    if (!confirm("메모를 삭제할까요?")) return;
+
+    const res = await fetch(`${rootPath}/comps/delete/${mSeq}`);
+
+    if (res.status !== 200) {
+      alert("서버문제로 삭제를 할수 없습니다");
+      return false;
+    }
+    const html = await res.text();
+    listBox.innerHTML = html;
+    alert("삭제를 완료했습니다.");
+  };
+
   listBox?.addEventListener("click", (e) => {
     // listBox 내의 클릭된 요소
     const target = e.target;
     if (target.tagName === "INPUT" && target.classList.contains("btn-new")) onNewMemo();
     if (target.tagName === "SPAN" && target.classList.contains("memo-content")) onUpdateMemo(e);
+    if (target.tagName === "I" && target.classList.contains("memo-delete")) onDeleteMemo(e);
   });
 
   const onSaveMemo = () => {
@@ -79,7 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
       body: payload,
     };
     fetch(`${rootPath}/comps/input`, fetchConfig)
-      .then((res) => res.text())
+      .then((res) => {
+        if (res.status === 200) alert("저장 완료");
+        return res.text();
+      })
       .then((html) => (listBox.innerHTML = html));
   };
 

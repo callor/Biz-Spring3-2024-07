@@ -75,7 +75,7 @@ section.memo article.list {
       span {
         flex: 1;
       }
-      i.delete {
+      i.memo-delete {
         color: red;
         font-size: 3rem;
         font-weight: 900;
@@ -87,7 +87,7 @@ section.memo article.list {
         background-color: #f4f4f4;
         cursor: pointer;
       }
-      &:hover i.delete {
+      &:hover i.memo-delete {
         opacity: 1;
       }
     }

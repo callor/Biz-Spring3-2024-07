@@ -65,6 +65,14 @@ public class CompsController {
 
 	}
 	
+	@RequestMapping(value="/delete/{m_seq}")
+	public String delete(@PathVariable( name="m_seq") String m_seq) {
+	
+		memoService.delete(m_seq);
+		return "redirect:/comps/list";
+	
+	}
+	
 	
 	
 }
