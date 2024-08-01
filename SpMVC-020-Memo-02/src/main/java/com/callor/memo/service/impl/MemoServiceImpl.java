@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import com.callor.memo.models.Memo;
 import com.callor.memo.service.MemoService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class MemoServiceImpl implements MemoService{
 	
@@ -114,7 +117,22 @@ public class MemoServiceImpl implements MemoService{
 
 	@Override
 	public int update(Memo memo) {
-		// TODO Auto-generated method stub
+
+		String m_seq = memo.getM_seq();
+//		for(Memo m : memoList) {
+//			if(m.getM_seq().equals(m_seq)) {
+//				m = memo;
+//				break;
+//			}
+//		}
+		
+		int nSize = memoList.size();
+		int index;
+		for(index = 0 ; index < nSize ; index++) {
+			if(memoList.get(index).getM_seq().equals(m_seq) ) break;
+		}
+		memoList.set(index, memo);
+		log.debug(memoList.toString());
 		return 0;
 	}
 
