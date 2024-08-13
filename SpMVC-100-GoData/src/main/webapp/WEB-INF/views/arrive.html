@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+>
+  <ul class="arrive-list">
+    <li class="title">
+      <span>노선</span><span>현재정류소</span><span>도착예정시간</span> <span>남은정류소</span>
+    </li>
+    <li th:if="${ARRIVE_LIST.size() < 1}">
+      <h1 class="error">버스 도착정보가 없습니다</h1>
+    </li>
+    <li th:each="ARRIVE:${ARRIVE_LIST}">
+      <span th:text="${ARRIVE.LINE_NAME}">노선번호</span>
+      <span th:text="${ARRIVE.BUSSTOP_NAME}">현재정류소</span>
+      <span th:text="${ARRIVE.REMAIN_MIN}">도착예정시간</span>
+      <span th:text="${ARRIVE.REMAIN_STOP}">남은정류소</span>
+    </li>
+  </ul>
+</html>

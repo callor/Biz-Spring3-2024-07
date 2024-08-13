@@ -7,12 +7,12 @@
 >
   <section th:fragment="station" class="station">
     <form><input placeholder="정류장이름을 입력하세요" name="station" /></form>
-    <ul>
-      <li><span>No</span><span>정류장</span><span>다음 정류장</span></li>
-      <li th:each="STOP:${BIS_LIST}" data-id="${STOP.BUSSTOP_ID}">
-        <span th:text="${STOP.STATION_NUM}">정류장번호</span>
-        <span th:text="${STOP.BUSSTOP_NAME}">정류장명</span>
-        <span th:text="${STOP.NEXT_BUSSTOP}">다음정류장</span>
+    <ul class="station-list">
+      <li class="title"><span>No</span><span>정류장</span><span>다음 정류장</span></li>
+      <li th:each="STOP:${BIS_LIST}" th:attr="data-id=${STOP.BUSSTOP_ID}">
+        <span th:text="${STOP.STATION_NUM}" class="item">정류장번호</span>
+        <span th:text="${STOP.BUSSTOP_NAME}" class="item">정류장명</span>
+        <span th:text="${STOP.NEXT_BUSSTOP}" class="item">다음정류장</span>
       </li>
     </ul>
   </section>

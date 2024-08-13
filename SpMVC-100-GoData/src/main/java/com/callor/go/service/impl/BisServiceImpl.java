@@ -97,6 +97,7 @@ public class BisServiceImpl implements BisService {
 		apiURL += "?serviceKey=" + DataGoConfig.GO_API_KEY;
 		apiURL += "&BUSSTOP_ID=" + busId;
 
+		log.debug("API URL {}",apiURL);
 		URI arriveURI = null;
 		try {
 			arriveURI = new URI(apiURL);
@@ -110,10 +111,17 @@ public class BisServiceImpl implements BisService {
 			response.getHeaders().setContentType(MediaType.APPLICATION_JSON);
 			return response;
 		});
+		
 		ResponseEntity<BusArriveList> busArriveEntity 
 		= restTemplate.exchange(
-				arriveURI,HttpMethod.GET, null,BusArriveList.class);
-		return busArriveEntity.getBody().ARRIVE_LIST;
+				arriveURI,
+				HttpMethod.GET, 
+				null,
+				BusArriveList.class);
+		
+		log.debug("도착정보 {}",busArriveEntity);
+		
+		return busArriveEntity.getBody().BUSSTOP_LIST;
 
 	}
 
