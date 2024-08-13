@@ -21,3 +21,15 @@
 	<version>3.3.0</version>
 </dependency>
 ```
+
+### thymeleaf 기본 사용법
+- 서버에서 전달된 변수를 표현하는 방법이 HTML 코드의 tag 속성으로 설정한다
+```jsp
+<td>${name}</td>
+```
+```html
+<td th:text="#name">홍길동</td>
+```
+- 속성을 `th:` prefix 로 시작한다.
+- 정적 web server를 사용하여 html 파일을 열면 `th:*` 로 설정된 속성은 모두 무시되고 화면에 나타나지 않는다.
+- 개발자와 화면디자이너간에 협업관계가 매우 좋아진다.
