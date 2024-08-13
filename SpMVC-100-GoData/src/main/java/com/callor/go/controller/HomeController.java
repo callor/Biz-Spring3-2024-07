@@ -1,13 +1,12 @@
 package com.callor.go.controller;
 
 import java.util.List;
-import java.util.Locale;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.callor.go.models.BisStation;
 import com.callor.go.service.BisService;
@@ -27,10 +26,16 @@ public class HomeController {
 	
 	
 	@RequestMapping(value="/")
-	public String home() {
-		return "home";
+	public String home(
+			@RequestParam(
+					name="station", 
+					required = false, 
+					defaultValue = "")  String station, Model model) {
+		
+		List<BisStation> bisList = bisService.getStations(station);
+		model.addAttribute("BIS_LIST",bisList);
+		return "station";
 	}
-
 	
 	
 //	@ResponseBody
