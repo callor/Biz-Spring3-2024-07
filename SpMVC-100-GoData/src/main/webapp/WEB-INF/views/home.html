@@ -25,8 +25,8 @@
       <p>공공데이터(data.go.kr)의 Open API 를 이용한 버스도착정보 시스템</p>
     </header>
     <section class="main">
-      <article class="station" th:replace="::station"></article>
-      <article class="stop_time" th:replace="::stop_time"></article>
+      <article class="station" th:replace="~{::station}"></article>
+      <article class="stop_time" th:replace="~{::stop_time}"></article>
     </section>
   </body>
 </html>
