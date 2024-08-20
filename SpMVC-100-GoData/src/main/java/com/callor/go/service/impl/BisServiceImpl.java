@@ -30,6 +30,8 @@ public class BisServiceImpl implements BisService {
 
 		String apiURI = DataGoConfig.BIS_URL;
 		apiURI += "?serviceKey=" + DataGoConfig.GO_API_KEY;
+		log.debug("API URL {}",apiURI);
+		
 		
 		URI bisURI = null;
 		try {
