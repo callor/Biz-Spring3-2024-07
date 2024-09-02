@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security-5.3.xsd">
 
-	<context:component-scan base-package="com.callor.hello.user.auth"/>
+	
 	
 	<!-- Spring Security 에서 지원하는 가상사용자 등록 -->
 	<!-- 
