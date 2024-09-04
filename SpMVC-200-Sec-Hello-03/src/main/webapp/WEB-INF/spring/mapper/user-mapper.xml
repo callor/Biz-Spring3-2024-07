@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.hello.dao.UserDao">
+ 
+ 	<insert id="insert">
+ 		INSERT INTO tbl_users(
+			username,
+			password,
+			realname,
+			email,
+			nickname 		
+ 		) VALUES (
+			#{username},
+			#{password},
+			#{realname},
+			#{email},
+			#{nickname} 		
+ 		)
+ 	</insert>
+ 	<update id="update"></update>
+
+	<select id="create_user_table">
+		CREATE TABLE IF NOT EXISTS tbl_users (
+			username VARCHAR(30) PRIMARY KEY,
+		    password VARCHAR(255) NOT NULL,
+		    realname VARCHAR(20),
+		    email VARCHAR(30),
+		    nickname VARCHAR(20)
+		)
+	</select>
+
+ 
+ </mapper> 

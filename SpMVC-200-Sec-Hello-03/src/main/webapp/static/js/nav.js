@@ -9,14 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let url = `${rootPath}`;
 
-    if (classList.contains("bbs")) url += "bbs";
-    if (classList.contains("free")) url += "free";
-    if (classList.contains("notice")) url += "notice";
+    if (classList.contains("bbs")) url += "/bbs";
+    if (classList.contains("free")) url += "/free";
+    if (classList.contains("notice")) url += "/notice";
 
     if (classList.contains("user")) {
       //   url += "/user/";
       //   url += classList[1];
-      url += `user/${classList[1]}`;
+      url += `/user/${classList[1]}`;
     }
     document.location.href = url;
   };

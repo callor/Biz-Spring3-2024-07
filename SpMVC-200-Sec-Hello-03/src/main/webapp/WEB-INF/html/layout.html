@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../../static/css/main.css" th:href="@{/static/css/main.css}" rel="stylesheet" />
+
+    <script th:inline="javascript">
+      const rootPath = /*[[@{/.}]]*/
+    </script>
+    <script
+      src="../../static/js/nav.js"
+      th:src="@{/static/js/nav.js}"
+      th:inline="javascript"
+    ></script>
+  </head>
+  <body>
+    <nav class="main">
+      <ul>
+        <li class="home">Home</li>
+        <li class="bbs notice">공지사항</li>
+        <li class="bbs free">자유게시판</li>
+        <li class="user login" sec:authorize="isAnonymous()">로그인</li>
+        <li class="user join" sec:authorize="isAnonymous()">회원가입</li>
+        <li class="user mypage" sec:authorize="isAuthenticated()">
+          <strong>MyPage</strong>
+          <span></span>
+        </li>
+        <li class="user logout">
+          <form
+            method="POST"
+            th:action="@{/user/logout}"
+            onclick="this.submit()"
+            sec:authorize="isAuthenticated()"
+          >
+            로그아웃
+          </form>
+        </li>
+      </ul>
+    </nav>
+    <section class="main" th:replace="~{::content}"></section>
+  </body>
+</html>
