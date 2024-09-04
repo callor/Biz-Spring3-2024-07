@@ -1,6 +1,8 @@
 package com.callor.hello.user.controller;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,8 +31,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(value= "/join",method=RequestMethod.POST)
-	public String join(@ModelAttribute UserVO userVO) {
-		userService.createUser(userVO);
+	public String join(@ModelAttribute UserVO userVO,Model model) {
+		
+		try {
+			userService.createUser(userVO);
+		} catch (DataAccessException e) {
+			model.addAttribute("ERROR","SQL");
+			return null;
+		}
 		return "redirect:/";
 	}
 	

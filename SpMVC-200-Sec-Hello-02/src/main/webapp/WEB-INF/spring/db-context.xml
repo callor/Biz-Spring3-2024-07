@@ -29,5 +29,12 @@
 		<constructor-arg ref="sessionFacotry"/>
 	</bean>
 	<mybatis-spring:scan base-package="com.callor.hello.dao"/>
+	
+	<tx:annotation-driven/>
+	<bean id="transactionManager" 
+			class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="ds"/>
+	</bean>
+	
 
 </beans>

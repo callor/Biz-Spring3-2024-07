@@ -3,7 +3,10 @@ package com.callor.hello.user.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -52,7 +55,8 @@ public class UserServiceImpl implements UserService {
 	 * 5. 이 사용자는 ROLE_USER 권한만 갖는다
  	 */
 	@Override
-	public UserVO createUser(UserVO userVO) {
+	@Transactional
+	public UserVO createUser(UserVO userVO) throws DataAccessException {
 		// TODO Auto-generated method stub
 		log.debug("User {}",userVO.toString());
 		

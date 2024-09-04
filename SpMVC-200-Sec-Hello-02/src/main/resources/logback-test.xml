@@ -9,7 +9,7 @@
     </appender>
 
     <logger name="org.springframework" level="INFO"/>
-    <logger name="org.mybatis" level="INFO"/>
+    <logger name="org.mybatis" level="DEBUG"/>
 
 
     <!-- 적용하는 프로젝트의  Base Package를 설정 -->
@@ -24,9 +24,13 @@
     <logger name="com.callor.hello.controller" level="DEBUG" additivity="false">
             <appender-ref ref="STDOUT" />       
     </logger>
-    <logger name="com.callor.hello.service" level="DEBUG" additivity="false">
+    <logger name="com.callor.hello.user.service" level="DEBUG" additivity="false">
             <appender-ref ref="STDOUT" />
     </logger>
+        <logger name="com.callor.hello.dao" level="DEBUG" additivity="false">
+            <appender-ref ref="STDOUT" />
+    </logger>
+    
 
 
     <root level="WARN">

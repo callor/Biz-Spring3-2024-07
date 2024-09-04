@@ -15,6 +15,7 @@
 </head>
 <body>
 	<h1>Home</h1>
+	<c:if test="${ERROR == 'SQL'}"><div>SQL 오류가 발생했습니다.<br/>고객센터에 문의해 주세요</div></c:if>
 	<f:form class="join">
 		<div><input name="username" id="username" placeholder="USERNAME"/></div>
 		<div><input name="password"  id="password" placeholder="PASSWORD"/></div>
